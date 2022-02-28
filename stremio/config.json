@@ -1,0 +1,45 @@
+{
+  "name": "Stremio",
+  "version": "dev",
+  "slug": "stremio",
+  "description": "Stremio",
+  "url": "https://github.com/dedins/hassio-addon-stremio",
+  "webui": "http://[HOST]:[PORT:8080]/",
+  "startup": "services",
+  "ingress": "true",
+  "ingress_port": 11470,
+  "panel_icon": "mdi:television-play",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "map": [
+    "config:rw",
+    "media:rw",
+    "share:rw",
+    "ssl"
+  ],
+  "boot": "auto",
+  "ports": {
+    "8080/tcp": null,
+    "11470/tcp": null,
+    "12470/tcp": null    
+  },
+ "ports_description": {
+    "8080/tcp": "stremio-web port",
+    "11470/tcp": "stremio server http port",
+    "12470/tcp": "stremio server https port"   
+  },
+  "privileged": [
+    "NET_ADMIN"
+  ],
+  "hassio_api": true,
+  "homeassistant_api": false,
+  "host_network": true,
+  "options": {
+    "log_level": "info"
+  },
+  "schema": {
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)"
+  },
+  "environment": {
+    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
+  }
+}
