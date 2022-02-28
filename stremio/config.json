@@ -18,12 +18,10 @@
   ],
   "boot": "auto",
   "ports": {
-    "8080/tcp": null,
     "11470/tcp": null,
     "12470/tcp": null    
   },
  "ports_description": {
-    "8080/tcp": "stremio-web port",
     "11470/tcp": "stremio server http port",
     "12470/tcp": "stremio server https port"   
   },
@@ -32,7 +30,7 @@
   ],
   "hassio_api": true,
   "homeassistant_api": false,
-  "host_network": true,
+  "host_network": false,
   "options": {
     "log_level": "info"
   },
